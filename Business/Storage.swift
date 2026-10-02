@@ -506,7 +506,7 @@ class Storage {
             case .modificationDate, .none:
                 return sortDirection == .asc && note.modifiedLocalAt < next.modifiedLocalAt || sortDirection == .desc && note.modifiedLocalAt > next.modifiedLocalAt
             case .title:
-                let result = note.title.localizedCaseInsensitiveCompare(next.title)
+                let result = note.title.localizedStandardCompare(next.title)
                 return sortDirection == .asc && result == .orderedAscending || sortDirection == .desc && result == .orderedDescending
             }
         }
